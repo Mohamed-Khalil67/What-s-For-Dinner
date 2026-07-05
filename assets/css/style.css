@@ -51,24 +51,6 @@ body {
   color: var(--primary) !important;
 }
 
-/* ============================================================
-   RECIPE CARD CONTAINER MODULE
-   ============================================================ */
-@media (min-width: 992px) {
-  .recipe-card-container {
-    height: 750px;
-  }
-
-  .section-image-wrapper {
-    height: 100%;
-  }
-
-  .row-content-scroller {
-    height: 100%;
-    overflow-y: auto;
-  }
-}
-
 /* Operational Button Overrides */
 .btn-orange-light {
   background-color: var(--light-orange);
@@ -102,12 +84,6 @@ body {
   text-decoration: none;
   font-size: 0.875rem;
   box-shadow: none !important;
-}
-
-@media (min-width: 768px) {
-  .custom-tab-btn {
-    font-size: 1rem;
-  }
 }
 
 .border-orange {

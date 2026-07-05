@@ -19,13 +19,13 @@
        HEADER & NAVIGATION
        ============================================================ -->
   <header id="header" class="bg-white shadow-sm border-bottom border-warning border-opacity-25 sticky-top">
-    <nav class="navbar navbar-expand-md navbar-light bg-white py-3" aria-label="Primary navigation">
-      <div class="container-xl">
+    <nav class="navbar navbar-expand-md navbar-light bg-white" aria-label="Primary navigation">
+      <div class="container">
 
         <!-- Logo Brand -->
         <a class="navbar-brand d-flex align-items-center gap-3 text-dark" href="#">
           <div class="brand-logo-box d-flex align-items-center justify-content-center shadow">
-            <i class="fa-solid fa-utensils text-white fs-5"></i>
+            <i class="fa-solid fa-utensils text-white"></i>
           </div>
           <div>
             <h1 class="h5 fw-bold mb-0 text-gray-900">What's For Dinner</h1>
@@ -75,15 +75,14 @@
   <!-- ============================================================
        MAIN DISPLAY CONTAINER
        ============================================================ -->
-  <main id="main-content" class="container-xl py-5">
-
-    <!-- Recipe Panel (Toggle standard .d-none to switch view engine configurations) -->
+  <main id="main-content" class="container pt-4">
+    <!-- Recipe Panel -->
     <section id="recipe-display-section"
       class="bg-white rounded-5 shadow-lg overflow-hidden border border-warning border-opacity-10 p-0 mb-5">
       <div class="row g-0 recipe-card-container">
 
         <!-- Left Side: Image Presentation & Quick Metrics -->
-        <div class="col-lg-5 position-relative overflow-hidden section-image-wrapper" style="min-height: 400px;">
+        <div class="col-lg-5 position-relative section-image-wrapper" style="min-height: 400px;">
           <img id="recipe-image" class="w-100 h-100 object-fit-cover position-absolute top-0 start-0"
             src="https://storage.googleapis.com/uxpilot-auth.appspot.com/c987e47793-062e728ad4ccc343589c.png"
             alt="Gourmet Spaghetti Carbonara" />
@@ -148,61 +147,63 @@
               </div>
             </div>
 
-            <!-- Extended Preparation Notice Alert Banner (Hidden by Default) -->
-            <div id="time-warning"
-              class="alert alert-danger border-start border-4 border-danger rounded-3 p-4 mb-4 d-none">
-              <div class="d-flex align-items-center gap-3">
-                <i class="fa-solid fa-triangle-exclamation text-danger fs-4"></i>
-                <div>
-                  <h6 class="alert-heading fw-bold mb-1">Extended Preparation Time</h6>
-                  <p class="small mb-0 text-danger text-opacity-75">This recipe requires more than 45 minutes to
-                    prepare. Plan accordingly!</p>
-                </div>
-              </div>
-            </div>
 
             <!-- Custom Tab Link Group Controls -->
             <div class="border-bottom mb-4 pb-1 overflow-x-auto text-nowrap">
               <div class="d-flex gap-4" id="recipeTabs" role="tablist">
-                <button
-                  class="btn btn-link custom-tab-btn active text-orange fw-semibold pb-2 px-0 border-0 border-bottom border-2 border-orange"
-                  type="button" role="tab">
+                <button class="btn btn-link custom-tab-btn active" id="ingredients-tab-btn" data-bs-toggle="tab"
+                  data-bs-target="#ingredients-pane" type="button" role="tab" aria-controls="ingredients-pane"
+                  aria-selected="true">
                   <i class="fa-solid fa-list-check me-2"></i>Ingredients
                 </button>
-                <button class="btn btn-link custom-tab-btn text-secondary fw-semibold pb-2 px-0 border-0" type="button"
-                  role="tab">
+
+                <button class="btn btn-link custom-tab-btn" id="instructions-tab-btn" data-bs-toggle="tab"
+                  data-bs-target="#instructions-pane" type="button" role="tab" aria-controls="instructions-pane"
+                  aria-selected="false">
                   <i class="fa-solid fa-book-open me-2"></i>Instructions
                 </button>
-                <button class="btn btn-link custom-tab-btn text-secondary fw-semibold pb-2 px-0 border-0" type="button"
-                  role="tab">
+
+                <button class="btn btn-link custom-tab-btn" id="nutrition-tab-btn" data-bs-toggle="tab"
+                  data-bs-target="#nutrition-pane" type="button" role="tab" aria-controls="nutrition-pane"
+                  aria-selected="false">
                   <i class="fa-solid fa-chart-pie me-2"></i>Nutrition
                 </button>
-                <button class="btn btn-link custom-tab-btn text-secondary fw-semibold pb-2 px-0 border-0" type="button"
-                  role="tab">
+
+                <button class="btn btn-link custom-tab-btn" id="tips-tab-btn" data-bs-toggle="tab"
+                  data-bs-target="#tips-pane" type="button" role="tab" aria-controls="tips-pane" aria-selected="false">
                   <i class="fa-solid fa-lightbulb me-2"></i>Chef's Tips
                 </button>
               </div>
             </div>
 
             <!-- Data Panel Display Lists Container Windows -->
-            <div class="recipe-tab-content-wrapper">
-
+            <div class="tab-content recipe-tab-content-wrapper">
               <!-- Ingredients Display Section -->
-              <div class="custom-tab-pane" id="ingredients-tab">
-                <div class="bg-orange-light-box rounded-4 p-4">
-                  <ul class="d-flex flex-column gap-3 mb-0" id="ingredients-list">
-                    <li class="d-flex align-items-start gap-3">
-                      <span
-                        class="badge bg-orange text-white rounded-circle d-flex align-items-center justify-content-center p-0"
-                        style="width: 24px; height: 24px;">1</span>
-                      <span class="text-secondary">400g spaghetti pasta</span>
-                    </li>
-                  </ul>
-                </div>
+              <div class="tab-pane fade show active custom-tab-pane" id="ingredients-pane" role="tabpanel"
+                aria-labelledby="ingredients-tab-btn">
+                <div class="p-4 text-secondary">Step Ingredients here</div>
               </div>
 
-              <!-- Note: Build visibility triggers around classes like .d-none to implement instructions, nutrition, or chef's tips view engines toggles -->
+              <!-- Instructions Display Section -->
+              <div class="tab-pane fade custom-tab-pane" id="instructions-pane" role="tabpanel"
+                aria-labelledby="instructions-tab-btn">
+                <div class="p-4 text-secondary">Step instruction here</div>
+              </div>
 
+              <!-- Nutrition Display Section -->
+              <div class="tab-pane fade custom-tab-pane" id="nutrition-pane" role="tabpanel"
+                aria-labelledby="nutrition-tab-btn">
+                <div class="p-4 text-secondary">Nutrition parameters here</div>
+              </div>
+
+              <!-- Chef's Tips Display Section -->
+              <div class="tab-pane fade custom-tab-pane" id="tips-pane" role="tabpanel" aria-labelledby="tips-tab-btn">
+                <div class="p-4 text-secondary">Chef tips here</div>
+              </div>
+            </div>
+
+            <!-- Data Panel Display Lists Container Windows -->
+            <div class="recipe-tab-content-wrapper">
             </div>
           </div>
 
