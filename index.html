@@ -13,236 +13,210 @@
   <link rel="stylesheet" href="./assets/css/style.css" />
 </head>
 
-<body data-bs-spy="scroll" data-bs-target="#navbarMainScrollSpy" data-bs-root-margin="0px 0px -80% 0px">
+<body class="bg-brand-gradient min-vh-100">
 
   <!-- ============================================================
-       HEADER — navbar
+       HEADER & NAVIGATION
        ============================================================ -->
-  <header id="header" class="sticky-top">
-    <nav class="navbar navbar-expand-lg" aria-label="Primary navigation">
-      <div class="container">
+  <header id="header" class="bg-white shadow-sm border-bottom border-warning border-opacity-25 sticky-top">
+    <nav class="navbar navbar-expand-md navbar-light bg-white py-3" aria-label="Primary navigation">
+      <div class="container-xl">
 
-        <!-- Logo -->
-        <a class="navbar-brand d-flex align-items-center" href="#hero" aria-label="Clarity home">
-          <span class="logo-box d-flex align-items-center justify-content-center">
-            <i class="fa-solid fa-cube" aria-hidden="true"></i>
-          </span>
-          <span class="gradTitle">Clarity</span>
+        <!-- Logo Brand -->
+        <a class="navbar-brand d-flex align-items-center gap-3 text-dark" href="#">
+          <div class="brand-logo-box d-flex align-items-center justify-content-center shadow">
+            <i class="fa-solid fa-utensils text-white fs-5"></i>
+          </div>
+          <div>
+            <h1 class="h5 fw-bold mb-0 text-gray-900">What's For Dinner</h1>
+            <p class="small text-muted mb-0 d-none d-sm-block" style="font-size: 0.75rem;">Your daily meal inspiration
+            </p>
+          </div>
         </a>
 
-        <!-- Hamburger -->
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMainScrollSpy"
-          aria-controls="navbarMainScrollSpy" aria-expanded="false" aria-label="Toggle navigation">
-          <i class="fa-solid fa-bars" aria-hidden="true"></i>
+        <!-- Mobile Menu Toggle Button -->
+        <button class="navbar-toggler border-0 text-secondary" type="button" data-bs-toggle="collapse"
+          data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <i class="fa-solid fa-bars fs-3"></i>
         </button>
 
-        <!-- Collapsible nav -->
-        <div class="collapse navbar-collapse" id="navbarMainScrollSpy">
-          <ul class="navbar-nav mx-auto gap-1 align-items-lg-center">
-
-            <li class="nav-item">
-              <a class="nav-link" href="#hero"><span>Home</span></a>
-            </li>
-
-            <!-- Services dropdown -->
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
-                data-bs-display="static" data-bs-auto-close="true" aria-expanded="false">
-                <span>Services</span> <i class="fa-solid fa-chevron-down nav-chevron" aria-hidden="true"></i>
-              </a>
-              <div class="dropdown-menu dropdown-mega p-0">
-                <div class="row g-0 p-3 p-lg-4">
-                  <div class="col-12 col-lg-4 p-2">
-                    <p class="mega-col-heading">Development</p>
-                    <ul class="list-unstyled mb-0">
-                      <li>
-                        <a class="mega-link d-flex align-items-start" href="#">
-                          <span class="mega-icon d-flex align-items-center justify-content-center"><i
-                              class="fa-solid fa-code" aria-hidden="true"></i></span>
-                          <div>
-                            <span class="mega-link-title">Web Development</span><br>
-                            <span class="mega-link-sub">Custom web applications &amp; websites</span>
-                          </div>
-                        </a>
-                      </li>
-                      <li>
-                        <a class="mega-link d-flex align-items-start" href="#">
-                          <span class="mega-icon d-flex align-items-center justify-content-center"><i
-                              class="fa-solid fa-mobile" aria-hidden="true"></i></span>
-                          <div>
-                            <span class="mega-link-title">Mobile Apps</span><br>
-                            <span class="mega-link-sub">iOS &amp; Android native apps</span>
-                          </div>
-                        </a>
-                      </li>
-                      <li>
-                        <a class="mega-link d-flex align-items-start" href="#">
-                          <span class="mega-icon d-flex align-items-center justify-content-center"><i
-                              class="fa-solid fa-palette" aria-hidden="true"></i></span>
-                          <div>
-                            <span class="mega-link-title">UI/UX Design</span><br>
-                            <span class="mega-link-sub">User-centered design solutions</span>
-                          </div>
-                        </a>
-                      </li>
-                    </ul>
-                  </div>
-                  <!-- Infrastructure column -->
-                  <div class="col-12 col-lg-4 p-2">
-                    <p class="mega-col-heading">Infrastructure &amp; AI</p>
-                    <ul class="list-unstyled mb-0">
-                      <li>
-                        <a class="mega-link d-flex align-items-start" href="#">
-                          <span class="mega-icon d-flex align-items-center justify-content-center"><i
-                              class="fa-solid fa-cloud" aria-hidden="true"></i></span>
-                          <div>
-                            <span class="mega-link-title">Cloud Solutions</span><br>
-                            <span class="mega-link-sub">Scalable cloud infrastructure</span>
-                          </div>
-                        </a>
-                      </li>
-                      <li>
-                        <a class="mega-link d-flex align-items-start" href="#">
-                          <span class="mega-icon d-flex align-items-center justify-content-center"><i
-                              class="fa-solid fa-brain" aria-hidden="true"></i></span>
-                          <div>
-                            <span class="mega-link-title">AI &amp; Machine Learning</span><br>
-                            <span class="mega-link-sub">Intelligent automation solutions</span>
-                          </div>
-                        </a>
-                      </li>
-                      <li>
-                        <a class="mega-link d-flex align-items-start" href="#">
-                          <span class="mega-icon d-flex align-items-center justify-content-center"><i
-                              class="fa-solid fa-database" aria-hidden="true"></i></span>
-                          <div>
-                            <span class="mega-link-title">Data Solutions</span><br>
-                            <span class="mega-link-sub">Database &amp; analytics platforms</span>
-                          </div>
-                        </a>
-                      </li>
-                    </ul>
-                  </div>
-                  <div class="col-12 col-lg-4 p-2">
-                    <p class="mega-col-heading">Marketing</p>
-                    <ul class="list-unstyled mb-0">
-                      <li>
-                        <a class="mega-link d-flex align-items-start" href="#">
-                          <span class="mega-icon d-flex align-items-center justify-content-center"><i
-                              class="fa-solid fa-chart-line" aria-hidden="true"></i></span>
-                          <div>
-                            <span class="mega-link-title">Digital Marketing</span><br>
-                            <span class="mega-link-sub">SEO, SEM &amp; social media</span>
-                          </div>
-                        </a>
-                      </li>
-                      <li>
-                        <a class="mega-link d-flex align-items-start" href="#">
-                          <span class="mega-icon d-flex align-items-center justify-content-center"><i
-                              class="fa-solid fa-bullhorn" aria-hidden="true"></i></span>
-                          <div>
-                            <span class="mega-link-title">Content Strategy</span><br>
-                            <span class="mega-link-sub">Engaging content creation</span>
-                          </div>
-                        </a>
-                      </li>
-                    </ul>
-                    <aside class="mega-aside mt-3">
-                      <h6>Need help choosing?</h6>
-                      <p class="mb-2">Talk to our experts to find the perfect solution for your business.</p>
-                      <a href="#contact" class="mega-aside-link d-inline-flex align-items-center">
-                        Contact us <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
-                      </a>
-                    </aside>
-                  </div>
-                </div>
-              </div>
-            </li>
-
-            <li class="nav-item"><a class="nav-link" href="#technology"><span>Technology</span></a></li>
-            <li class="nav-item"><a class="nav-link" href="#testimonials"><span>Testimonials</span></a></li>
-            <li class="nav-item"><a class="nav-link" href="#faq"><span>FAQ</span></a></li>
-            <li class="nav-item"><a class="nav-link" href="#contact"><span>Contact</span></a></li>
-          </ul>
-
-          <!-- CTA Buttons -->
-          <div class="d-flex flex-column flex-lg-row align-items-stretch align-items-lg-center gap-2 mt-3 mt-lg-0">
-            <button type="button" class="btn-outline-nav">Sign In</button>
-            <button type="button" class="btn-primary-brand">Get Started</button>
+        <!-- Collapsible Navigation Items -->
+        <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+          <div class="navbar-nav align-items-md-center gap-3 mt-3 mt-md-0">
+            <button class="btn btn-link nav-link p-2 text-secondary text-start d-flex align-items-center gap-3"
+              type="button" title="Saved Recipes">
+              <i class="fa-solid fa-bookmark fs-5 text-md-center" style="width: 24px;"></i>
+              <span class="d-md-none">Saved Recipes</span>
+            </button>
+            <button class="btn btn-link nav-link p-2 text-secondary text-start d-flex align-items-center gap-3"
+              type="button" title="Recent">
+              <i class="fa-solid fa-clock-rotate-left fs-5 text-md-center" style="width: 24px;"></i>
+              <span class="d-md-none">Recent</span>
+            </button>
+            <button class="btn btn-link nav-link p-2 text-secondary text-start d-flex align-items-center gap-3"
+              type="button" title="Settings">
+              <i class="fa-solid fa-gear fs-5 text-md-center" style="width: 24px;"></i>
+              <span class="d-md-none">Settings</span>
+            </button>
+            <hr class="d-md-none my-2 text-warning opacity-25">
+            <div class="nav-item d-flex align-items-center gap-3 p-2 p-md-0">
+              <img src="https://storage.googleapis.com/uxpilot-auth.appspot.com/avatars/avatar-4.jpg" alt="Profile"
+                class="rounded-circle border border-2 border-warning"
+                style="width: 40px; height: 40px; object-fit: cover;" />
+              <span class="d-md-none fw-medium text-secondary">Profile</span>
+            </div>
           </div>
         </div>
 
       </div>
     </nav>
   </header>
-  <main>
-    <!-- ============================================================
-         HERO 
-         ============================================================ -->
-    <section id="hero">
-      <div class="container">
-        <div class="row align-items-center g-5">
-          <!-- Text column -->
-          <div class="col-lg-6">
-            <div class="hero-badge d-inline-flex align-items-center gap-2 mb-4">
-              <i class="fa-solid fa-rocket" aria-hidden="true"></i>
-              Transforming Digital Experiences
-            </div>
-            <h1 class="hero-title mb-4">
-              <span class="line-1">Digital Solutions</span>
-              <span class="line-2">That Drive</span>
-              <span class="line-3">Growth</span>
-            </h1>
-            <p class="hero-subtext mb-5">
-              We craft innovative digital experiences that transform businesses and accelerate growth.
-              From cutting-edge web applications to mobile solutions, we deliver technology that makes a difference.
-            </p>
-            <div class="d-grid d-lg-flex flex-lg-row align-items-lg-start gap-3 mb-5">
-              <button type="button" class="btn-hero-primary d-flex align-items-center justify-content-center gap-2">
-                <span>Start Your Project</span> <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
-              </button>
-              <button type="button" class="btn-hero-ghost d-flex align-items-center justify-content-center gap-2">
-                <i class="fa-solid fa-play" aria-hidden="true"></i>
-                Watch Demo
-              </button>
-            </div>
-            <!-- Stats -->
-            <div class="hero-stats d-flex gap-4 gap-sm-5 pt-4">
-              <div>
-                <div class="hero-stat-value">500+</div>
-                <div class="hero-stat-label">Projects Delivered</div>
-              </div>
-              <div>
-                <div class="hero-stat-value">98%</div>
-                <div class="hero-stat-label">Client Satisfaction</div>
-              </div>
-              <div>
-                <div class="hero-stat-value">24/7</div>
-                <div class="hero-stat-label">Support</div>
-              </div>
+
+  <!-- ============================================================
+       MAIN DISPLAY CONTAINER
+       ============================================================ -->
+  <main id="main-content" class="container-xl py-5">
+
+    <!-- Recipe Panel (Toggle standard .d-none to switch view engine configurations) -->
+    <section id="recipe-display-section"
+      class="bg-white rounded-5 shadow-lg overflow-hidden border border-warning border-opacity-10 p-0 mb-5">
+      <div class="row g-0 recipe-card-container">
+
+        <!-- Left Side: Image Presentation & Quick Metrics -->
+        <div class="col-lg-5 position-relative overflow-hidden section-image-wrapper" style="min-height: 400px;">
+          <img id="recipe-image" class="w-100 h-100 object-fit-cover position-absolute top-0 start-0"
+            src="https://storage.googleapis.com/uxpilot-auth.appspot.com/c987e47793-062e728ad4ccc343589c.png"
+            alt="Gourmet Spaghetti Carbonara" />
+
+          <!-- Floating Community Rating Score Card -->
+          <div class="position-absolute top-0 start-0 m-4 bg-white rounded-pill px-3 py-2 shadow-sm">
+            <div class="d-flex align-items-center gap-2">
+              <i class="fa-solid fa-star text-warning small"></i>
+              <span class="fw-bold text-dark small" id="rating-average">4.8</span>
+              <span class="text-muted" style="font-size: 0.75rem;" id="rating-quantity">(234 reviews)</span>
             </div>
           </div>
-          <!-- Image column -->
-          <div class="col-lg-6">
-            <div class="hero-img-wrap">
-              <!-- Rotated orange shadow card behind the image -->
-              <div class="hero-img-backdrop"></div>
-              <div class="hero-img-card">
-                <img src="./assets/img/hero-img.png"
-                  alt="Modern digital workspace with multiple screens showing dashboards and analytics" />
-                <!-- Floating badges -->
-                <div class="hero-float-badge d-flex align-items-center justify-content-center top-right"
-                  aria-hidden="true">
-                  <i class="fa-solid fa-code"></i>
-                </div>
-                <div class="hero-float-badge d-flex align-items-center justify-content-center bottom-left"
-                  aria-hidden="true">
-                  <i class="fa-solid fa-mobile"></i>
-                </div>
+
+          <!-- Bottom Metadata Quick Snapshot Deck -->
+          <div class="position-absolute bottom-0 start-0 end-0 m-4 bg-white bg-opacity-95 rounded-4 p-3 shadow">
+            <div class="row g-2 text-center">
+              <div class="col-4">
+                <i class="fa-solid fa-clock text-orange fs-4 mb-1"></i>
+                <p class="small text-muted mb-0">Prep Time</p>
+                <p class="fw-bold text-gray-900 mb-0 small" id="prep-time-display">15 min</p>
+              </div>
+              <div class="col-4">
+                <i class="fa-solid fa-fire-burner text-danger fs-4 mb-1"></i>
+                <p class="small text-muted mb-0">Cook Time</p>
+                <p class="fw-bold text-gray-900 mb-0 small" id="cook-time-display">20 min</p>
+              </div>
+              <div class="col-4">
+                <i class="fa-solid fa-users text-primary fs-4 mb-1"></i>
+                <p class="small text-muted mb-0">Servings</p>
+                <p class="fw-bold text-gray-900 mb-0 small" id="servings-display">4 people</p>
               </div>
             </div>
           </div>
         </div>
+
+        <!-- Right Side: Extensive Recipe Structural Data -->
+        <div class="col-lg-7 p-4 p-md-5 h-100 d-flex flex-column justify-content-between row-content-scroller">
+          <div>
+
+            <!-- Context Header Row & Actions -->
+            <div class="d-flex flex-column-reverse flex-md-row justify-content-between align-items-start gap-4 mb-4">
+              <div>
+                <div class="d-flex align-items-center gap-2 mb-3">
+                  <span class="badge bg-success bg-opacity-10 text-success rounded-pill px-3 py-1.5 fw-semibold"
+                    id="difficulty-badge" style="font-size: 0.75rem;">Easy</span>
+                  <span class="badge bg-primary bg-opacity-10 text-primary rounded-pill px-3 py-1.5 fw-semibold"
+                    id="category-badge" style="font-size: 0.75rem;">Italian</span>
+                </div>
+                <h2 class="fw-bold text-gray-900 display-6 mb-2" id="recipe-name">Creamy Spaghetti Carbonara</h2>
+                <p class="text-secondary lead fs-6 mb-0" id="recipe-description">A classic Italian pasta dish with eggs,
+                  cheese, and pancetta</p>
+              </div>
+              <div class="d-flex gap-2 ms-auto ms-md-0">
+                <button class="btn btn-orange-light p-3 rounded-4 d-flex align-items-center justify-content-center"
+                  style="width: 48px; height: 48px;" type="button">
+                  <i class="fa-solid fa-bookmark"></i>
+                </button>
+                <button class="btn btn-orange-light p-3 rounded-4 d-flex align-items-center justify-content-center"
+                  style="width: 48px; height: 48px;" type="button">
+                  <i class="fa-solid fa-share-nodes"></i>
+                </button>
+              </div>
+            </div>
+
+            <!-- Extended Preparation Notice Alert Banner (Hidden by Default) -->
+            <div id="time-warning"
+              class="alert alert-danger border-start border-4 border-danger rounded-3 p-4 mb-4 d-none">
+              <div class="d-flex align-items-center gap-3">
+                <i class="fa-solid fa-triangle-exclamation text-danger fs-4"></i>
+                <div>
+                  <h6 class="alert-heading fw-bold mb-1">Extended Preparation Time</h6>
+                  <p class="small mb-0 text-danger text-opacity-75">This recipe requires more than 45 minutes to
+                    prepare. Plan accordingly!</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Custom Tab Link Group Controls -->
+            <div class="border-bottom mb-4 pb-1 overflow-x-auto text-nowrap">
+              <div class="d-flex gap-4" id="recipeTabs" role="tablist">
+                <button
+                  class="btn btn-link custom-tab-btn active text-orange fw-semibold pb-2 px-0 border-0 border-bottom border-2 border-orange"
+                  type="button" role="tab">
+                  <i class="fa-solid fa-list-check me-2"></i>Ingredients
+                </button>
+                <button class="btn btn-link custom-tab-btn text-secondary fw-semibold pb-2 px-0 border-0" type="button"
+                  role="tab">
+                  <i class="fa-solid fa-book-open me-2"></i>Instructions
+                </button>
+                <button class="btn btn-link custom-tab-btn text-secondary fw-semibold pb-2 px-0 border-0" type="button"
+                  role="tab">
+                  <i class="fa-solid fa-chart-pie me-2"></i>Nutrition
+                </button>
+                <button class="btn btn-link custom-tab-btn text-secondary fw-semibold pb-2 px-0 border-0" type="button"
+                  role="tab">
+                  <i class="fa-solid fa-lightbulb me-2"></i>Chef's Tips
+                </button>
+              </div>
+            </div>
+
+            <!-- Data Panel Display Lists Container Windows -->
+            <div class="recipe-tab-content-wrapper">
+
+              <!-- Ingredients Display Section -->
+              <div class="custom-tab-pane" id="ingredients-tab">
+                <div class="bg-orange-light-box rounded-4 p-4">
+                  <ul class="d-flex flex-column gap-3 mb-0" id="ingredients-list">
+                    <li class="d-flex align-items-start gap-3">
+                      <span
+                        class="badge bg-orange text-white rounded-circle d-flex align-items-center justify-content-center p-0"
+                        style="width: 24px; height: 24px;">1</span>
+                      <span class="text-secondary">400g spaghetti pasta</span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+
+              <!-- Note: Build visibility triggers around classes like .d-none to implement instructions, nutrition, or chef's tips view engines toggles -->
+
+            </div>
+          </div>
+
+          <!-- Bottom Operational Workspace Row -->
+          <div class="mt-4 pt-4 border-top">
+            <button id="try-another-btn"
+              class="btn btn-brand-primary px-4 py-2.5 rounded-3 fw-semibold shadow-sm d-flex align-items-center gap-2"
+              type="button">
+              <i class="fa-solid fa-rotate"></i>Try Another Recipe
+            </button>
+          </div>
+
+        </div>
+
       </div>
     </section>
 
