@@ -9,21 +9,26 @@
   padding: 0;
 }
 
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
 ul,
 ol {
   list-style: none;
+  padding: 0;
+  margin: 0;
 }
-
 a {
   text-decoration: none;
   color: inherit;
-}
-
-button {
-  cursor: pointer;
-  background: transparent;
-  border: none;
-  font: inherit;
 }
 
 img {
@@ -67,7 +72,7 @@ body {
 }
 
 /* ============================================================
-   HEADER & LOCAL NAVIGATION STYLING
+   HEADER
    ============================================================ */
 .brand-logo-box {
   width: 48px;
@@ -108,6 +113,10 @@ body {
   color: #ffffff;
   transform: scale(1.03);
 }
+
+/* ============================================================
+   MAIN
+   ============================================================ */
 
 /* Tab & Interior Contents Presentation */
 .custom-tab-btn {
