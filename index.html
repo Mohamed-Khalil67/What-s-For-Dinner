@@ -80,7 +80,6 @@
     <section id="recipe-display-section"
       class="bg-white rounded-5 shadow-lg overflow-hidden border border-warning border-opacity-10 p-0 mb-5">
       <div class="row g-0 recipe-card-container">
-
         <!-- Left Side: Image Presentation & Quick Metrics -->
         <div class="col-lg-5 position-relative section-image-wrapper" style="min-height: 400px;">
           <img id="recipe-image" class="w-100 h-100 object-fit-cover position-absolute top-0 start-0"
@@ -120,109 +119,98 @@
 
         <!-- Right Side: Extensive Recipe Structural Data -->
         <div class="col-lg-7 p-4 p-md-5 h-100 d-flex flex-column justify-content-between row-content-scroller">
-          <div>
-
-            <!-- Context Header Row & Actions -->
-            <div class="d-flex flex-column-reverse flex-md-row justify-content-between align-items-start gap-4 mb-4">
-              <div>
-                <div class="d-flex align-items-center gap-2 mb-3">
-                  <span class="badge bg-success bg-opacity-10 text-success rounded-pill px-3 py-1.5 fw-semibold"
-                    id="difficulty-badge" style="font-size: 0.75rem;">Easy</span>
-                  <span class="badge bg-primary bg-opacity-10 text-primary rounded-pill px-3 py-1.5 fw-semibold"
-                    id="category-badge" style="font-size: 0.75rem;">Italian</span>
-                </div>
-                <h2 class="fw-bold text-gray-900 display-6 mb-2" id="recipe-name">Creamy Spaghetti Carbonara</h2>
-                <p class="text-secondary lead fs-6 mb-0" id="recipe-description">A classic Italian pasta dish with eggs,
-                  cheese, and pancetta</p>
+          <!-- Context Header Row & Actions -->
+          <div class="d-flex flex-column-reverse flex-md-row justify-content-between align-items-start gap-4 mb-4">
+            <div>
+              <div class="d-flex align-items-center gap-2 mb-3">
+                <span class="badge bg-success bg-opacity-10 text-success rounded-pill px-3 py-1.5 fw-semibold"
+                  id="difficulty-badge" style="font-size: 0.75rem;">Easy</span>
+                <span class="badge bg-primary bg-opacity-10 text-primary rounded-pill px-3 py-1.5 fw-semibold"
+                  id="category-badge" style="font-size: 0.75rem;">Italian</span>
               </div>
-              <div class="d-flex gap-2 ms-auto ms-md-0">
-                <button class="btn btn-orange-light p-3 rounded-4 d-flex align-items-center justify-content-center"
-                  style="width: 48px; height: 48px;" type="button">
-                  <i class="fa-solid fa-bookmark"></i>
-                </button>
-                <button class="btn btn-orange-light p-3 rounded-4 d-flex align-items-center justify-content-center"
-                  style="width: 48px; height: 48px;" type="button">
-                  <i class="fa-solid fa-share-nodes"></i>
-                </button>
-              </div>
+              <h2 class="fw-bold text-gray-900 display-6 mb-2" id="recipe-name">Creamy Spaghetti Carbonara</h2>
+              <p class="text-secondary lead fs-6 mb-0" id="recipe-description">A classic Italian pasta dish with eggs,
+                cheese, and pancetta</p>
             </div>
-
-
-            <!-- Custom Tab Link Group Controls -->
-            <div class="border-bottom mb-4 pb-1 overflow-x-auto text-nowrap">
-              <div class="d-flex gap-4" id="recipeTabs" role="tablist">
-                <button class="btn btn-link custom-tab-btn active" id="ingredients-tab-btn" data-bs-toggle="tab"
-                  data-bs-target="#ingredients-pane" type="button" role="tab" aria-controls="ingredients-pane"
-                  aria-selected="true">
-                  <i class="fa-solid fa-list-check me-2"></i>Ingredients
-                </button>
-
-                <button class="btn btn-link custom-tab-btn" id="instructions-tab-btn" data-bs-toggle="tab"
-                  data-bs-target="#instructions-pane" type="button" role="tab" aria-controls="instructions-pane"
-                  aria-selected="false">
-                  <i class="fa-solid fa-book-open me-2"></i>Instructions
-                </button>
-
-                <button class="btn btn-link custom-tab-btn" id="nutrition-tab-btn" data-bs-toggle="tab"
-                  data-bs-target="#nutrition-pane" type="button" role="tab" aria-controls="nutrition-pane"
-                  aria-selected="false">
-                  <i class="fa-solid fa-chart-pie me-2"></i>Nutrition
-                </button>
-
-                <button class="btn btn-link custom-tab-btn" id="tips-tab-btn" data-bs-toggle="tab"
-                  data-bs-target="#tips-pane" type="button" role="tab" aria-controls="tips-pane" aria-selected="false">
-                  <i class="fa-solid fa-lightbulb me-2"></i>Chef's Tips
-                </button>
-              </div>
+            <div class="d-flex gap-2 ms-auto ms-md-0">
+              <button class="btn btn-orange-light p-3 rounded-4 d-flex align-items-center justify-content-center"
+                style="width: 48px; height: 48px;" type="button">
+                <i class="fa-solid fa-bookmark"></i>
+              </button>
+              <button class="btn btn-orange-light p-3 rounded-4 d-flex align-items-center justify-content-center"
+                style="width: 48px; height: 48px;" type="button">
+                <i class="fa-solid fa-share-nodes"></i>
+              </button>
             </div>
+          </div>
+          <!-- Tab Navigation -->
+          <div class="border-bottom">
+            <div class="d-flex flex-shrink-0 gap-4" id="recipeTabs" role="tablist">
+              <button class="btn btn-link custom-tab-btn active" id="ingredients-tab-btn" data-bs-toggle="tab"
+                data-bs-target="#ingredients-pane" type="button" role="tab" aria-controls="ingredients-pane"
+                aria-selected="true">
+                <i class="fa-solid fa-list-check me-2"></i><span>Ingredients</span>
+              </button>
 
-            <!-- Data Panel Display Lists Container Windows -->
-            <div class="tab-content recipe-tab-content-wrapper">
-              <!-- Ingredients Display Section -->
-              <div class="tab-pane fade show active custom-tab-pane" id="ingredients-pane" role="tabpanel"
-                aria-labelledby="ingredients-tab-btn">
-                <div class="p-4 text-secondary">Step Ingredients here</div>
-              </div>
+              <button class="btn btn-link custom-tab-btn" id="instructions-tab-btn" data-bs-toggle="tab"
+                data-bs-target="#instructions-pane" type="button" role="tab" aria-controls="instructions-pane"
+                aria-selected="false">
+                <i class="fa-solid fa-book-open me-2"></i><span>Instructions</span>
+              </button>
 
-              <!-- Instructions Display Section -->
-              <div class="tab-pane fade custom-tab-pane" id="instructions-pane" role="tabpanel"
-                aria-labelledby="instructions-tab-btn">
-                <div class="p-4 text-secondary">Step instruction here</div>
-              </div>
+              <button class="btn btn-link custom-tab-btn" id="nutrition-tab-btn" data-bs-toggle="tab"
+                data-bs-target="#nutrition-pane" type="button" role="tab" aria-controls="nutrition-pane"
+                aria-selected="false">
+                <i class="fa-solid fa-chart-pie me-2"></i><span>Nutrition</span>
+              </button>
 
-              <!-- Nutrition Display Section -->
-              <div class="tab-pane fade custom-tab-pane" id="nutrition-pane" role="tabpanel"
-                aria-labelledby="nutrition-tab-btn">
-                <div class="p-4 text-secondary">Nutrition parameters here</div>
-              </div>
-
-              <!-- Chef's Tips Display Section -->
-              <div class="tab-pane fade custom-tab-pane" id="tips-pane" role="tabpanel" aria-labelledby="tips-tab-btn">
-                <div class="p-4 text-secondary">Chef tips here</div>
-              </div>
-            </div>
-
-            <!-- Data Panel Display Lists Container Windows -->
-            <div class="recipe-tab-content-wrapper">
+              <button class="btn btn-link custom-tab-btn" id="tips-tab-btn" data-bs-toggle="tab"
+                data-bs-target="#tips-pane" type="button" role="tab" aria-controls="tips-pane" aria-selected="false">
+                <i class="fa-solid fa-lightbulb me-2"></i><span>Chef's Tips</span>
+              </button>
             </div>
           </div>
 
+          <!-- Data Panel Display Lists Container Windows -->
+          <div class="tab-content recipe-tab-content-wrapper">
+            <!-- Ingredients Display Section -->
+            <div class="tab-pane fade show active custom-tab-pane" id="ingredients-pane" role="tabpanel"
+              aria-labelledby="ingredients-tab-btn">
+              <div class="p-4 text-secondary">Step Ingredients here</div>
+            </div>
+
+            <!-- Instructions Display Section -->
+            <div class="tab-pane fade custom-tab-pane" id="instructions-pane" role="tabpanel"
+              aria-labelledby="instructions-tab-btn">
+              <div class="p-4 text-secondary">Step instruction here</div>
+            </div>
+
+            <!-- Nutrition Display Section -->
+            <div class="tab-pane fade custom-tab-pane" id="nutrition-pane" role="tabpanel"
+              aria-labelledby="nutrition-tab-btn">
+              <div class="p-4 text-secondary">Nutrition parameters here</div>
+            </div>
+
+            <!-- Chef's Tips Display Section -->
+            <div class="tab-pane fade custom-tab-pane" id="tips-pane" role="tabpanel" aria-labelledby="tips-tab-btn">
+              <div class="p-4 text-secondary">Chef tips here</div>
+            </div>
+          </div>
           <!-- Bottom Operational Workspace Row -->
           <div class="mt-4 pt-4 border-top">
             <button id="try-another-btn"
               class="btn btn-brand-primary px-4 py-2.5 rounded-3 fw-semibold shadow-sm d-flex align-items-center gap-2"
               type="button">
-              <i class="fa-solid fa-rotate"></i>Try Another Recipe
+              <i class="fa-solid fa-rotate"></i><span>Try Another Recipe</span>
             </button>
           </div>
-
         </div>
-
       </div>
     </section>
 
   </main>
   <script src="./assets/js/bootstrap.bundle.min.js"></script>
+  <script src="./assets/js/script.js"></script>
 </body>
 
 </html>
