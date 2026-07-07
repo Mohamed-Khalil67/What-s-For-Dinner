@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Clarity - Digital Solutions Platform</title>
+  <title>What's For Dinner</title>
   <link rel="icon" href="./assets/img/favicon.png" />
 
   <link rel="stylesheet" href="./assets/css/bootstrap.min.css" />
@@ -19,12 +19,11 @@
        HEADER & NAVIGATION
        ============================================================ -->
   <header id="header" class="bg-white shadow-sm border-bottom border-opacity-25 sticky-top">
-    <nav class="navbar navbar-expand-md bg-white" aria-label="Primary navigation">
+    <nav class="navbar navbar-expand-md bg-white">
       <div class="container">
-
         <!-- Logo Brand -->
-        <a class="d-flex align-items-center gap-3 text-dark" href="#">
-          <div class="brand-logo-box d-flex align-items-center justify-content-center shadow">
+        <a class="d-flex align-items-center gap-3" href="#">
+          <div class="brand-logo-box d-flex align-items-center justify-content-center shadow ms-1">
             <i class="fa-solid fs-4 fa-utensils text-white"></i>
           </div>
           <div>
@@ -33,68 +32,61 @@
             </p>
           </div>
         </a>
-
         <!-- Mobile Menu Toggle Button -->
-        <button class="navbar-toggler border-0 text-secondary" type="button" data-bs-toggle="collapse"
-          data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <button class="navbar-toggler border-0 " type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
           <i class="fa-solid fa-bars fs-3"></i>
         </button>
-
         <!-- Collapsible Navigation Items -->
         <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
-          <div class="navbar-nav align-items-md-center gap-3 mt-3 mt-md-0">
-            <button class="btn btn-link nav-link p-2  d-flex align-items-center gap-3" type="button"
+          <div class="navbar-nav align-items-md-center gap-2 mt-3 mt-md-0">
+            <button class="btn btn-link nav-link p-2 d-flex align-items-center gap-3" type="button"
               title="Saved Recipes">
-              <i class="fa-solid fa-bookmark fs-5 text-md-center" style="width: 24px;"></i>
-              <span class="d-md-none">Saved Recipes</span>
+              <span class="nav-icon-slot"><i class="fa-solid fa-bookmark fs-5"></i></span>
+              <span class="d-md-none fw-medium">Saved Recipes</span>
             </button>
-            <button class="btn btn-link nav-link p-2  d-flex align-items-center gap-3" type="button" title="Recent">
-              <i class="fa-solid fa-clock-rotate-left fs-5 text-md-center" style="width: 24px;"></i>
-              <span class="d-md-none">Recent</span>
+            <button class="btn btn-link nav-link p-2 d-flex align-items-center gap-3" type="button" title="Recent">
+              <span class="nav-icon-slot"><i class="fa-solid fa-clock-rotate-left fs-5"></i></span>
+              <span class="d-md-none fw-medium">Recent</span>
             </button>
-            <button class="btn btn-link nav-link p-2  d-flex align-items-center gap-3" type="button" title="Settings">
-              <i class="fa-solid fa-gear fs-5 text-md-center" style="width: 24px;"></i>
-              <span class="d-md-none">Settings</span>
+            <button class="btn btn-link nav-link p-2 d-flex align-items-center gap-3" type="button" title="Settings">
+              <span class="nav-icon-slot"><i class="fa-solid fa-gear fs-5"></i></span>
+              <span class="d-md-none fw-medium">Settings</span>
             </button>
-            <hr class="d-md-none my-2 text-warning opacity-25">
-            <div class="nav-item d-flex align-items-center gap-3 p-2 p-md-0">
-              <img src="https://storage.googleapis.com/uxpilot-auth.appspot.com/avatars/avatar-4.jpg" alt="Profile"
-                class="rounded-circle border border-2 border-warning"
-                style="width: 40px; height: 40px; object-fit: cover;" />
-              <span class="d-md-none fw-medium ">Profile</span>
-            </div>
+            <button class=" btn btn-link nav-link d-flex align-items-center gap-3 p-2">
+              <span class="nav-icon-slot">
+                <img src="./assets/img/avatar-1.jpg" alt="Profile"
+                  class="rounded-circle border border-2 border-warning avatar-img" />
+              </span>
+              <span class="d-md-none fw-medium">Profile</span>
+            </button>
           </div>
         </div>
-
       </div>
     </nav>
   </header>
-
   <!-- ============================================================
-       MAIN DISPLAY CONTAINER
-       ============================================================ -->
+    MAIN DISPLAY CONTAINER
+  ============================================================ -->
   <main id="main-content" class="container pt-4">
     <!-- Recipe Panel -->
-    <section id="recipe-display-section"
-      class="bg-white rounded-5 shadow-lg overflow-hidden border border-warning border-opacity-10 p-0 mb-5">
+    <section id="recipe-display-section" class="bg-white rounded-5 shadow-lg overflow-hidden p-0 mb-5">
       <div class="row g-0 recipe-card-container">
         <!-- Left Side: Image Presentation & Quick Metrics -->
-        <div class="col-lg-5 position-relative section-image-wrapper" style="min-height: 400px;">
+        <div class="col-lg-5 position-relative section-image-wrapper">
           <img id="recipe-image" class="w-100 h-100 object-fit-cover position-absolute top-0 start-0"
             src="https://storage.googleapis.com/uxpilot-auth.appspot.com/c987e47793-062e728ad4ccc343589c.png"
             alt="Gourmet Spaghetti Carbonara" />
 
           <!-- Floating Community Rating Score Card -->
-          <div class="position-absolute top-0 start-0 m-4 bg-white rounded-pill px-3 py-2 shadow-sm">
+          <div class="position-absolute top-0 start-0 m-4 bg-white rounded-pill px-3 py-2 shadow">
             <div class="d-flex align-items-center gap-2">
               <i class="fa-solid fa-star text-warning small"></i>
-              <span class="fw-bold text-dark small" id="rating-average">4.8</span>
-              <span class="text-muted" style="font-size: 0.75rem;" id="rating-quantity">(234 reviews)</span>
+              <span class="fw-bold" id="rating-average">4.8</span>
+              <span class="text-muted small" id="rating-quantity">(234 reviews)</span>
             </div>
           </div>
-
           <!-- Bottom Metadata Quick Snapshot Deck -->
-          <div class="position-absolute bottom-0 start-0 end-0 m-4 bg-white bg-opacity-95 rounded-4 p-3 shadow">
+          <div class="position-absolute bottom-0 start-0 end-0 m-4 bg-white rounded-4 p-3 shadow">
             <div class="row g-2 text-center">
               <div class="col-4">
                 <i class="fa-solid fa-clock text-orange fs-4 mb-1"></i>
@@ -114,56 +106,67 @@
             </div>
           </div>
         </div>
-
         <!-- Right Side: Extensive Recipe Structural Data -->
-        <div class="col-lg-7 p-4 p-md-5 h-100 d-flex flex-column justify-content-between row-content-scroller">
+        <div class="col-lg-7 p-4 p-md-5 d-flex flex-column justify-content-between row-content-scroller">
           <!-- Context Header Row & Actions -->
           <div class="d-flex flex-column-reverse flex-md-row justify-content-between align-items-start gap-4 mb-4">
             <div>
               <div class="d-flex align-items-center gap-2 mb-3">
-                <span class="badge bg-success bg-opacity-10 text-success rounded-pill px-3 py-1.5 fw-semibold"
-                  id="difficulty-badge" style="font-size: 0.75rem;">Easy</span>
-                <span class="badge bg-primary bg-opacity-10 text-primary rounded-pill px-3 py-1.5 fw-semibold"
-                  id="category-badge" style="font-size: 0.75rem;">Italian</span>
+                <span class="badge bg-success bg-opacity-10 text-success rounded-pill px-3 py-1.5 fw-semibold badge-sm"
+                  id="difficulty-badge">Easy</span>
+                <span class="badge bg-primary bg-opacity-10 text-primary rounded-pill px-3 py-1.5 fw-semibold badge-sm"
+                  id="category-badge">Italian</span>
               </div>
               <h2 class="fw-bold text-gray-900 display-6 mb-2" id="recipe-name">Creamy Spaghetti Carbonara</h2>
               <p class="text-secondary lead fs-6 mb-0" id="recipe-description">A classic Italian pasta dish with eggs,
                 cheese, and pancetta</p>
             </div>
             <div class="d-flex gap-2 ms-auto ms-md-0">
-              <button class="btn btn-orange-light p-3 rounded-4 d-flex align-items-center justify-content-center"
-                style="width: 48px; height: 48px;" type="button">
+              <button
+                class="btn btn-orange-light p-3 rounded-4 d-flex align-items-center justify-content-center icon-btn-48"
+                type="button">
                 <i class="fa-solid fa-bookmark"></i>
               </button>
-              <button class="btn btn-orange-light p-3 rounded-4 d-flex align-items-center justify-content-center"
-                style="width: 48px; height: 48px;" type="button">
+              <button
+                class="btn btn-orange-light p-3 rounded-4 d-flex align-items-center justify-content-center icon-btn-48"
+                type="button">
                 <i class="fa-solid fa-share-nodes"></i>
               </button>
             </div>
           </div>
+
+          <div id="time-warning"
+            class="alert align-items-center border-0 border-start border-4 border-danger bg-danger bg-opacity-10 rounded-3 mb-4 p-3">
+            <div class="d-flex align-items-center">
+              <i class="fa-solid fa-triangle-exclamation text-danger fs-3 me-3"></i>
+              <div>
+                <p class="fw-semibold text-danger mb-0 small">Extended Preparation Time</p>
+                <p class="text-danger mb-0 small">
+                  This recipe requires more than <span class="fw-bolder">45</span> minutes to prepare. Plan accordingly!
+                </p>
+              </div>
+            </div>
+          </div>
           <!-- Tab Navigation -->
-          <div class="border-bottom">
-            <div class="d-flex flex-shrink-0 gap-4" id="recipeTabs" role="tablist">
+          <div class="border-bottom p-2">
+            <div class="d-flex align-items-center justify-content-between" id="recipeTabs">
               <button class="btn btn-link custom-tab-btn active" id="ingredients-tab-btn" data-bs-toggle="tab"
-                data-bs-target="#ingredients-pane" type="button" role="tab" aria-controls="ingredients-pane"
-                aria-selected="true">
+                data-bs-target="#ingredients-pane" type="button">
                 <i class="fa-solid fa-list-check me-2"></i><span>Ingredients</span>
               </button>
 
               <button class="btn btn-link custom-tab-btn" id="instructions-tab-btn" data-bs-toggle="tab"
-                data-bs-target="#instructions-pane" type="button" role="tab" aria-controls="instructions-pane"
-                aria-selected="false">
+                data-bs-target="#instructions-pane" type="button">
                 <i class="fa-solid fa-book-open me-2"></i><span>Instructions</span>
               </button>
 
               <button class="btn btn-link custom-tab-btn" id="nutrition-tab-btn" data-bs-toggle="tab"
-                data-bs-target="#nutrition-pane" type="button" role="tab" aria-controls="nutrition-pane"
-                aria-selected="false">
+                data-bs-target="#nutrition-pane" type="button">
                 <i class="fa-solid fa-chart-pie me-2"></i><span>Nutrition</span>
               </button>
 
               <button class="btn btn-link custom-tab-btn" id="tips-tab-btn" data-bs-toggle="tab"
-                data-bs-target="#tips-pane" type="button" role="tab" aria-controls="tips-pane" aria-selected="false">
+                data-bs-target="#tips-pane" type="button">
                 <i class="fa-solid fa-lightbulb me-2"></i><span>Chef's Tips</span>
               </button>
             </div>
@@ -172,25 +175,22 @@
           <!-- Data Panel Display Lists Container Windows -->
           <div class="tab-content recipe-tab-content-wrapper">
             <!-- Ingredients Display Section -->
-            <div class="tab-pane fade show active custom-tab-pane" id="ingredients-pane" role="tabpanel"
-              aria-labelledby="ingredients-tab-btn">
+            <div class="tab-pane fade show active custom-tab-pane" id="ingredients-pane">
               <div class="p-4 text-secondary">Step Ingredients here</div>
             </div>
 
             <!-- Instructions Display Section -->
-            <div class="tab-pane fade custom-tab-pane" id="instructions-pane" role="tabpanel"
-              aria-labelledby="instructions-tab-btn">
+            <div class="tab-pane fade custom-tab-pane" id="instructions-pane">
               <div class="p-4 text-secondary">Step instruction here</div>
             </div>
 
             <!-- Nutrition Display Section -->
-            <div class="tab-pane fade custom-tab-pane" id="nutrition-pane" role="tabpanel"
-              aria-labelledby="nutrition-tab-btn">
+            <div class="tab-pane fade custom-tab-pane" id="nutrition-pane">
               <div class="p-4 text-secondary">Nutrition parameters here</div>
             </div>
 
             <!-- Chef's Tips Display Section -->
-            <div class="tab-pane fade custom-tab-pane" id="tips-pane" role="tabpanel" aria-labelledby="tips-tab-btn">
+            <div class="tab-pane fade custom-tab-pane" id="tips-pane">
               <div class="p-4 text-secondary">Chef tips here</div>
             </div>
           </div>

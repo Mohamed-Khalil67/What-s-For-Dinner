@@ -1,4 +1,47 @@
-﻿/* ============================================================
+/* ============================================================
+   FONTS
+   ============================================================ */
+@font-face {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('../fonts/poppins-400.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url('../fonts/poppins-500.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url('../fonts/poppins-600.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url('../fonts/poppins-700.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 800;
+  font-display: swap;
+  src: url('../fonts/poppins-800.woff2') format('woff2');
+}
+
+/* ============================================================
    GLOBAL RESETS
    ============================================================ */
 *,
@@ -74,7 +117,7 @@ body {
 /* ============================================================
    HEADER
    ============================================================ */
-.brand-logo-box {
+#header .brand-logo-box {
   width: 48px;
   height: 48px;
   background: linear-gradient(135deg, var(--primary), #ef4444);
@@ -88,6 +131,33 @@ body {
 #header .nav-link:hover {
   color: var(--primary);
 }
+
+.avatar-img {
+  width: 40px;
+  height: 40px;
+  object-fit: cover;
+}
+
+.nav-icon-slot {
+  width: 40px;
+}
+
+.navbar-toggler {
+  transition: all 0.3s;
+}
+
+.navbar-toggler:focus {
+  border: 0;
+  box-shadow: none;
+}
+
+.navbar-toggler:hover {
+  color: var(--primary);
+}
+
+/* ============================================================
+   MAIN
+   ============================================================ */
 
 /* Operational Button Overrides */
 .btn-orange-light {
@@ -109,14 +179,10 @@ body {
 }
 
 .btn-brand-primary:hover {
-  opacity: 0.95;
+  background: linear-gradient(to right, var(--primary), #ef4444);
   color: #ffffff;
-  transform: scale(1.03);
+  transform: scale(1.08);
 }
-
-/* ============================================================
-   MAIN
-   ============================================================ */
 
 /* Tab & Interior Contents Presentation */
 .custom-tab-btn {
@@ -143,4 +209,8 @@ body {
 
 .custom-tab-btn:hover {
   color: var(--primary);
+}
+
+.section-image-wrapper {
+  min-height: 400px;
 }
