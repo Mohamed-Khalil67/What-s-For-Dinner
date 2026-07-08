@@ -1,5 +1,5 @@
 /* ============================================================
-   FONTS
+   FONTS  —  self-hosted Poppins (referenced by <body> font-family)
    ============================================================ */
 @font-face {
   font-family: 'Poppins';
@@ -42,7 +42,7 @@
 }
 
 /* ============================================================
-   GLOBAL RESETS
+   GLOBAL RESETS  —  applies to every element
    ============================================================ */
 *,
 *::before,
@@ -69,6 +69,7 @@ ol {
   padding: 0;
   margin: 0;
 }
+
 a {
   text-decoration: none;
   color: inherit;
@@ -80,7 +81,7 @@ img {
 }
 
 /* ============================================================
-   BRAND DESIGN CONSTANTS & DESIGN TOKENS
+   DESIGN TOKENS  —  brand colours & font (used throughout)
    ============================================================ */
 :root {
   --primary: #ea580c; /* orange-600 */
@@ -92,20 +93,26 @@ img {
   --gray-900: #111827;
 
   --font-family-sans: 'Poppins', sans-serif;
+
+  /* recipe card height — one place to control the whole card size.
+     fills the viewport minus header + top/bottom spacing, with a 600px floor */
+  --card-height: max(600px, calc(100vh - 160px));
 }
 
 /* ============================================================
-   BASE TYPOGRAPHY ELEMENTS & GLOBAL GRADIENTS
+   BASE  —  <body> + shared colour / background helpers
    ============================================================ */
 body {
   font-family: var(--font-family-sans);
   color: var(--gray-700);
 }
 
+/* <body class="bg-brand-gradient"> */
 .bg-brand-gradient {
   background: linear-gradient(135deg, #fff7ed, #fef3c7, #fef08a);
 }
 
+/* generic text-colour helpers (header title, tab icons, metrics…) */
 .text-gray-900 {
   color: var(--gray-900);
 }
@@ -115,8 +122,10 @@ body {
 }
 
 /* ============================================================
-   HEADER
+   HEADER / NAVBAR  —  <header id="header">
    ============================================================ */
+
+/* round gradient logo badge (holds the utensils icon) */
 #header .brand-logo-box {
   width: 48px;
   height: 48px;
@@ -124,6 +133,7 @@ body {
   border-radius: 50%;
 }
 
+/* nav link hover colour (Saved Recipes / Recent / Settings) */
 #header .nav-link {
   transition: color 0.2s ease-in-out;
 }
@@ -132,16 +142,19 @@ body {
   color: var(--primary);
 }
 
+/* fixed-width slot so every nav icon + the avatar line up in a column */
+.nav-icon-slot {
+  width: 40px;
+}
+
+/* profile avatar image */
 .avatar-img {
   width: 40px;
   height: 40px;
   object-fit: cover;
 }
 
-.nav-icon-slot {
-  width: 40px;
-}
-
+/* mobile hamburger button — remove default border/ring, orange on hover */
 .navbar-toggler {
   transition: all 0.3s;
 }
@@ -156,10 +169,41 @@ body {
 }
 
 /* ============================================================
-   MAIN
+   RECIPE CARD · LAYOUT  —  <section id="recipe-display-section">
    ============================================================ */
 
-/* Operational Button Overrides */
+/* left image column — keeps the card a constant height */
+.section-image-wrapper {
+  min-height: var(--card-height);
+}
+
+/* right column — fixed height, clips overflow so header/tabs/button stay put */
+.row-content-scroller {
+  height: var(--card-height);
+  overflow: hidden;
+}
+
+/* only the tab content scrolls internally */
+.recipe-tab-content-wrapper {
+  flex: 1 1 auto;
+  overflow-y: auto;
+}
+
+/* ============================================================
+   RECIPE CARD · BADGES & ACTION BUTTONS
+   ============================================================ */
+
+/* difficulty / category pills */
+.badge-sm {
+  font-size: 0.75rem;
+}
+
+/* square bookmark / share buttons (header actions) */
+.icon-btn-48 {
+  width: 48px;
+  height: 48px;
+}
+
 .btn-orange-light {
   background-color: var(--light-orange);
   color: var(--primary);
@@ -171,6 +215,7 @@ body {
   color: var(--secondary);
 }
 
+/* "Try Another Recipe" gradient button */
 .btn-brand-primary {
   background: linear-gradient(to right, var(--primary), #ef4444);
   color: #ffffff;
@@ -184,20 +229,24 @@ body {
   transform: scale(1.08);
 }
 
-/* Tab & Interior Contents Presentation */
-.custom-tab-btn {
+/* ============================================================
+   RECIPE CARD · TAB NAVIGATION  —  #recipeTabs buttons
+   ============================================================ */
+#recipeTabs .custom-tab-btn {
   list-style: none;
   text-decoration: none;
   color: var(--gray-500);
+  font-weight: 700;
   position: relative;
   transition: all 0.4s ease;
 }
 
-.custom-tab-btn.active {
+#recipeTabs .custom-tab-btn.active {
   color: var(--primary);
 }
 
-.custom-tab-btn.active::after {
+/* orange underline bar beneath the active tab */
+#recipeTabs .custom-tab-btn.active::after {
   content: '';
   position: absolute;
   bottom: 0;
@@ -207,10 +256,39 @@ body {
   background-color: var(--primary);
 }
 
-.custom-tab-btn:hover {
+#recipeTabs .custom-tab-btn:hover {
   color: var(--primary);
 }
 
-.section-image-wrapper {
-  min-height: 400px;
+/* ============================================================
+   RECIPE CARD · TAB CONTENT  —  markup built by script.js
+   (ingredients / instructions / nutrition panes)
+   ============================================================ */
+
+/* orange badge background — ingredients / instructions number badges */
+.bg-orange-500 {
+  background-color: var(--primary);
+}
+
+/* light orange row background — ingredient items */
+.bg-orange-100 {
+  background-color: var(--light-orange);
+}
+
+/* numbered circle badge — ingredients list */
+.recipe-step-badge {
+  width: 28px;
+  height: 28px;
+}
+
+/* larger numbered badge — instructions steps */
+.recipe-step-badge-lg {
+  width: 36px;
+  height: 36px;
+}
+
+/* rounded icon box — nutrition rows */
+.recipe-nutrition-icon {
+  width: 40px;
+  height: 40px;
 }

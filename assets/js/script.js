@@ -461,3 +461,136 @@ const recipes = [
     ],
   },
 ];
+
+let currentRecipeIndex = 0;
+
+// icon + Bootstrap colour per nutrient (drives both the icon and its tinted box)
+const nutritionIcons = {
+  Calories: { icon: 'fa-fire', color: 'danger' },
+  Protein: { icon: 'fa-dumbbell', color: 'primary' },
+  Carbohydrates: { icon: 'fa-wheat-awn', color: 'warning' },
+  Fat: { icon: 'fa-droplet', color: 'info' },
+  'Saturated Fat': { icon: 'fa-bacon', color: 'secondary' },
+  Fiber: { icon: 'fa-seedling', color: 'success' },
+  Sodium: { icon: 'fa-cube', color: 'dark' },
+  Sugar: { icon: 'fa-candy-cane', color: 'danger' },
+};
+
+function buildIngredientsHtml(ingredients) {
+  return (
+    '<ul class="list-unstyled bg-orange-100 rounded-3 p-3 mb-0">' +
+    ingredients
+      .map(
+        (ingredient, index) => `
+          <li class="d-flex align-items-center mb-3">
+            <div class="rounded-circle bg-orange-500 text-white fw-bold d-flex align-items-center justify-content-center flex-shrink-0 me-3 recipe-step-badge">${index + 1}</div>
+            <span>${ingredient.amount} ${ingredient.item}</span>
+          </li>
+        `,
+      )
+      .join('') +
+    '</ul>'
+  );
+}
+
+function buildInstructionsHtml(instructions) {
+  return instructions
+    .map(
+      (instruction) => `
+        <div class="d-flex align-items-start mb-4">
+          <div class="rounded-4 bg-orange-500 text-white fw-bold d-flex align-items-center justify-content-center flex-shrink-0 me-3 recipe-step-badge recipe-step-badge-lg">${instruction.step}</div>
+          <div class="pt-1">
+            <p class="mb-0">${instruction.description}</p>
+          </div>
+        </div>
+      `,
+    )
+    .join('');
+}
+
+function buildNutritionHtml(nutrition) {
+  return (
+    '<div class="row g-3 mx-0">' +
+    nutrition
+      .map((item) => {
+        const { icon, color } = nutritionIcons[item.label];
+        return `
+          <div class="col-md-6">
+            <div class="d-flex align-items-center justify-content-between bg-light rounded-3 p-3">
+              <div class="d-flex align-items-center">
+                <div class="rounded-3 bg-${color} bg-opacity-10 d-flex align-items-center justify-content-center me-3 recipe-nutrition-icon">
+                  <i class="fa-solid ${icon} text-${color}"></i>
+                </div>
+                <span class="fw-medium">${item.label}</span>
+              </div>
+              <span class="fw-bold text-gray-900">${item.value} ${item.unit}</span>
+            </div>
+          </div>
+        `;
+      })
+      .join('') +
+    '</div>'
+  );
+}
+
+function buildTipsHtml(tips) {
+  return tips
+    .map(
+      (tip) => `
+        <div class="d-flex gap-3 mb-4">
+          <i class="${tip.icon} text-orange fs-5"></i>
+          <div>
+            <h6 class="fw-bold text-gray-900 mb-1">${tip.title}</h6>
+            <p class="mb-0">${tip.description}</p>
+          </div>
+        </div>
+      `,
+    )
+    .join('');
+}
+
+function renderRecipe(recipe) {
+  document.getElementById('recipe-image').src = recipe.image;
+  document.getElementById('recipe-image').alt = recipe.name;
+  document.getElementById('rating-average').textContent = recipe.rating.average;
+  document.getElementById('rating-quantity').textContent =
+    `(${recipe.rating.quantity} reviews)`;
+  document.getElementById('prep-time-display').textContent = recipe.prepTime;
+  document.getElementById('cook-time-display').textContent = recipe.cookTime;
+  document.getElementById('servings-display').textContent =
+    `${recipe.servings} people`;
+  document.getElementById('difficulty-badge').textContent = recipe.difficulty;
+  document.getElementById('category-badge').textContent = recipe.category;
+  document.getElementById('recipe-name').textContent = recipe.name;
+  document.getElementById('recipe-description').textContent =
+    recipe.description;
+
+  document.getElementById('ingredients-pane').innerHTML = buildIngredientsHtml(
+    recipe.ingredients,
+  );
+  document.getElementById('instructions-pane').innerHTML =
+    buildInstructionsHtml(recipe.instructions);
+  document.getElementById('nutrition-pane').innerHTML = buildNutritionHtml(
+    recipe.nutrition,
+  );
+  document.getElementById('tips-pane').innerHTML = buildTipsHtml(recipe.tips);
+
+  const isLongPrep = computeIsLongPrep(
+    recipe.prepTimeMinutes,
+    recipe.cookTimeMinutes,
+  );
+  document
+    .getElementById('time-warning')
+    .classList.toggle('d-none', !isLongPrep);
+  // I have a function that give me the flag if the recipe has a flag
+  // if yes then toggle it with the flag
+}
+
+function chooseRecipe() {
+  currentRecipeIndex = (currentRecipeIndex + 1) % recipes.length;
+  // current Recipe Index , has an index appending usign modulo to scroll through the list untill
+  // the last index which make the index to 0 again , like an infinite loop without stoping
+  renderRecipe(recipes[currentRecipeIndex]);
+}
+
+renderRecipe(recipes[currentRecipeIndex]);

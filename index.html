@@ -67,10 +67,10 @@
   <!-- ============================================================
     MAIN DISPLAY CONTAINER
   ============================================================ -->
-  <main id="main-content" class="container pt-4">
+  <main id="main-content" class="container-lg container-fluid pt-4">
     <!-- Recipe Panel -->
     <section id="recipe-display-section" class="bg-white rounded-5 shadow-lg overflow-hidden p-0 mb-5">
-      <div class="row g-0 recipe-card-container">
+      <div class="row g-0">
         <!-- Left Side: Image Presentation & Quick Metrics -->
         <div class="col-lg-5 position-relative section-image-wrapper">
           <img id="recipe-image" class="w-100 h-100 object-fit-cover position-absolute top-0 start-0"
@@ -112,13 +112,13 @@
           <div class="d-flex flex-column-reverse flex-md-row justify-content-between align-items-start gap-4 mb-4">
             <div>
               <div class="d-flex align-items-center gap-2 mb-3">
-                <span class="badge bg-success bg-opacity-10 text-success rounded-pill px-3 py-1.5 fw-semibold badge-sm"
+                <span class="badge bg-success bg-opacity-10 text-success rounded-pill px-3 fw-semibold badge-sm"
                   id="difficulty-badge">Easy</span>
-                <span class="badge bg-primary bg-opacity-10 text-primary rounded-pill px-3 py-1.5 fw-semibold badge-sm"
+                <span class="badge bg-primary bg-opacity-10 text-primary rounded-pill px-3 fw-semibold badge-sm"
                   id="category-badge">Italian</span>
               </div>
               <h2 class="fw-bold text-gray-900 display-6 mb-2" id="recipe-name">Creamy Spaghetti Carbonara</h2>
-              <p class="text-secondary lead fs-6 mb-0" id="recipe-description">A classic Italian pasta dish with eggs,
+              <p class="lead fs-6 mb-0" id="recipe-description">A classic Italian pasta dish with eggs,
                 cheese, and pancetta</p>
             </div>
             <div class="d-flex gap-2 ms-auto ms-md-0">
@@ -136,7 +136,7 @@
           </div>
 
           <div id="time-warning"
-            class="alert align-items-center border-0 border-start border-4 border-danger bg-danger bg-opacity-10 rounded-3 mb-4 p-3">
+            class="alert align-items-center border-0 border-start border-4 border-danger bg-danger bg-opacity-10 rounded-3 mb-4 p-3 d-none">
             <div class="d-flex align-items-center">
               <i class="fa-solid fa-triangle-exclamation text-danger fs-3 me-3"></i>
               <div>
@@ -148,8 +148,8 @@
             </div>
           </div>
           <!-- Tab Navigation -->
-          <div class="border-bottom p-2">
-            <div class="d-flex align-items-center justify-content-between" id="recipeTabs">
+          <div class="border-bottom p-2 mb-4">
+            <div class="nav d-flex align-items-center justify-content-between" id="recipeTabs">
               <button class="btn btn-link custom-tab-btn active" id="ingredients-tab-btn" data-bs-toggle="tab"
                 data-bs-target="#ingredients-pane" type="button">
                 <i class="fa-solid fa-list-check me-2"></i><span>Ingredients</span>
@@ -175,29 +175,29 @@
           <!-- Data Panel Display Lists Container Windows -->
           <div class="tab-content recipe-tab-content-wrapper">
             <!-- Ingredients Display Section -->
-            <div class="tab-pane fade show active custom-tab-pane" id="ingredients-pane">
-              <div class="p-4 text-secondary">Step Ingredients here</div>
+            <div class="tab-pane fade show active" id="ingredients-pane">
+              <div class="p-4">Step Ingredients here</div>
             </div>
 
             <!-- Instructions Display Section -->
-            <div class="tab-pane fade custom-tab-pane" id="instructions-pane">
-              <div class="p-4 text-secondary">Step instruction here</div>
+            <div class="tab-pane fade" id="instructions-pane">
+              <div class="p-4">Step instruction here</div>
             </div>
 
             <!-- Nutrition Display Section -->
-            <div class="tab-pane fade custom-tab-pane" id="nutrition-pane">
-              <div class="p-4 text-secondary">Nutrition parameters here</div>
+            <div class="tab-pane fade" id="nutrition-pane">
+              <div class="p-4">Nutrition parameters here</div>
             </div>
 
             <!-- Chef's Tips Display Section -->
-            <div class="tab-pane fade custom-tab-pane" id="tips-pane">
-              <div class="p-4 text-secondary">Chef tips here</div>
+            <div class="tab-pane fade" id="tips-pane">
+              <div class="p-4">Chef tips here</div>
             </div>
           </div>
           <!-- Bottom Operational Workspace Row -->
           <div class="mt-4 pt-4 border-top">
-            <button id="try-another-btn"
-              class="btn btn-brand-primary px-4 py-2.5 rounded-3 fw-semibold shadow-sm d-flex align-items-center gap-2"
+            <button id="try-another-btn" onclick="chooseRecipe()"
+              class="btn btn-brand-primary px-4 rounded-3 fw-semibold shadow-sm d-flex align-items-center gap-2"
               type="button">
               <i class="fa-solid fa-rotate"></i><span>Try Another Recipe</span>
             </button>
