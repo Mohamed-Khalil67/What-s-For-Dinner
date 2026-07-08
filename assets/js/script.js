@@ -593,4 +593,4 @@ function chooseRecipe() {
   renderRecipe(recipes[currentRecipeIndex]);
 }
 
-renderRecipe(recipes[currentRecipeIndex]);
+renderRecipe(recipes[currentRecipeIndex]); // Function Call
